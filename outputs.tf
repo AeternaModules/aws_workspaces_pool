@@ -1,7 +1,3 @@
-output "workspaces_pools_id" {
-  description = "Map of id values across all workspaces_pools, keyed the same as var.workspaces_pools"
-  value       = { for k, v in aws_workspaces_pool.workspaces_pools : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "workspaces_pools_application_settings" {
   description = "Map of application_settings values across all workspaces_pools, keyed the same as var.workspaces_pools"
   value       = { for k, v in aws_workspaces_pool.workspaces_pools : k => v.application_settings if v.application_settings != null && length(v.application_settings) > 0 }
